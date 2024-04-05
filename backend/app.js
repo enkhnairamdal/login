@@ -31,10 +31,14 @@ const{email, password}=req.body
 })
 
 app.post("/signup",async(req, res)=>{
-    const{email, password}=req.body
+    const{email, password , firstName , lastName , phoneNumber ,cpassword}=req.body
     const data={
         email:email,
         password:password,
+        firstName : firstName, 
+        lastName : lastName , 
+        phoneNumber : phoneNumber,
+        cpassword:cpassword ,
     }
         try{
             const check = await collection.findOne({email:email})
